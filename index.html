@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#111329">
+  <title>SPLDV SPLTV Monopoly</title>
+  <link rel="stylesheet" href="game.css">
+  <link rel="stylesheet" href="game-screen.css">
+  <script defer src="game-engine.js"></script>
+  <script defer src="game-ui.js"></script>
+</head>
+<body>
+  <div class="app">
+    <header class="topbar">
+      <div><div class="eyebrow">MATH CLASS, NEW ENERGY ⚡</div><h1>SPLDV SPLTV <span>Monopoly</span></h1><p>Jelajahi Bogor · Kuasai persamaan · Kelas X</p></div>
+      <nav aria-label="Menu permainan">
+        <button data-action="rules">Panduan</button>
+        <button data-action="report">Rekap & nilai</button>
+        <button data-action="history">Riwayat</button>
+        <button data-action="teacher">⚙ Kontrol guru</button>
+        <button data-action="fullscreen" title="Layar penuh">⛶</button>
+      </nav>
+    </header>
+    <div id="storageWarning" class="warning" role="alert" hidden></div>
+    <div id="status" class="status"></div>
+    <main class="layout">
+      <section class="board-shell" aria-label="Papan 30 petak"><div id="board" class="board"></div><div class="board-foot"><span>25 KECAMATAN · 4 KESEMPATAN · 1 START</span><span>OFFLINE READY ●</span></div></section>
+      <aside class="sidebar">
+        <section id="action" class="action-panel" aria-label="Aksi giliran"></section>
+      </aside>
+    </main>
+    <section class="teams-panel"><div class="section-heading"><h2>THE SQUAD</h2><span>5 TIM / 1 ARENA</span></div><div id="teams"></div></section>
+    <section class="history-panel" hidden><div id="logs" class="logs"></div></section>
+    <footer>SPLDV SPLTV Monopoly / BERPIKIR. BERHITUNG. BERKUASA. <span id="saveStatus">Progres tersimpan di browser ini</span></footer>
+  </div>
+  <dialog id="dialog"><div class="dialog-head"><span id="dialogLabel">SPLDV SPLTV Monopoly</span><button data-action="close-dialog" aria-label="Tutup dialog">✕</button></div><div id="dialogContent"></div></dialog>
+  <noscript>Aktifkan JavaScript pada browser untuk memainkan game ini.</noscript>
+</body>
+</html>

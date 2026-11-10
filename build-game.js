@@ -1,0 +1,12 @@
+'use strict';
+const fs=require('node:fs');
+const path=require('node:path');
+const read=name=>fs.readFileSync(path.join(__dirname,name),'utf8');
+const script=name=>read(name).replace(/<\/script/gi,'<\\/script');
+let html=read('index.html');
+html=html.replace('<link rel="stylesheet" href="game.css">',()=>'<style>\n'+read('game.css')+'\n</style>');
+html=html.replace('<link rel="stylesheet" href="game-screen.css">',()=>'<style>\n'+read('game-screen.css')+'\n</style>');
+html=html.replace('  <script defer src="game-engine.js"></script>\n','').replace('  <script defer src="game-ui.js"></script>\n','');
+html=html.replace('</body>',()=>'<script>\n'+script('game-engine.js')+'\n'+script('game-ui.js')+'\n</script>\n</body>');
+fs.writeFileSync(path.join(__dirname,'Monopoli_Matematika_Bogor_30_Petak_V6.html'),html,'utf8');
+console.log('HTML mandiri berhasil dibuat. Semua aset dan kode sudah disematkan.');
